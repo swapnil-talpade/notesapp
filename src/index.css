@@ -26,6 +26,7 @@ code {
   color: white;
 }
 
+
 .container{
   max-width: 960px;
   margin-right: auto;
@@ -44,6 +45,20 @@ code {
 .note.new{
   background-color: #67D7CC;
 }
+
+.note.new.dark-mode{
+  background-color: #1d1d1d;
+  color: white;
+}
+
+.note.new.dark-mode textarea{
+  border: none;
+  resize: none;
+  color: white;
+  background-color: #1d1d1d;   
+}
+
+
 textarea{
   border: none;
   resize: none;
@@ -78,12 +93,19 @@ textarea:focus{
   justify-content: space-between;
   white-space: pre-wrap;
 }
+.note.dark-mode{
+  background-color: #bb86fc;
+  color: black; 
+}
+
+
 
 .note-footer{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 
 .delete-icon:hover{
   cursor: pointer;

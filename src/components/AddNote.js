@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const AddNote = ({ handleAddNote }) => {
+const AddNote = ({ handleAddNote, darkMode }) => {
     const [noteText, setNoteText] = useState("");
     const characterLimit = 200;
     const handleChange = (e) => {
@@ -17,7 +17,7 @@ const AddNote = ({ handleAddNote }) => {
         setNoteText("")
     }
     return (
-        <div className="note new">
+        <div className={`${darkMode ? "note new dark-mode" : "note new"}`}>
             <textarea
                 name=""
                 cols="10"

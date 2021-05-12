@@ -18,12 +18,26 @@ const App = () => {
       setNotes(savedNotes)
     }
   }, [])
+  useEffect(() => {
+    const getMode = JSON.parse(
+      localStorage.getItem('react-notes-app-darkMode')
+    )
+    if (getMode) {
+      setDarkMode(getMode)
+    }
+  }, [])
 
   useEffect(() => {
     localStorage.setItem(
       'react-notes-app-data',
       JSON.stringify(notes))
   }, [notes])
+  useEffect(() => {
+    localStorage.setItem(
+      'react-notes-app-darkMode',
+      JSON.stringify(darkMode)
+    )
+  }, [darkMode])
 
   const addNote = (text) => {
     console.log(text)
@@ -45,9 +59,9 @@ const App = () => {
   return (
     <div className={`${darkMode && 'dark-mode'}`}>
       <div className="container">
-        <Header handleDarkMode={setDarkMode} />
+        <Header handleDarkMode={setDarkMode} darkMode={darkMode} />
         <Search handleSearchNote={setSearchText} />
-        <NotesList notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))} handleAddNote={addNote} handleDeleteNote={deleteNote} />
+        <NotesList notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))} handleAddNote={addNote} handleDeleteNote={deleteNote} darkMode={darkMode} />
       </div>
     </div>
 
