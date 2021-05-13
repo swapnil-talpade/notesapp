@@ -1,5 +1,8 @@
 # Notes App using React.js
 
+## Deployed Site URl
+    - https://swapniltalpade-notesapp.netlify.app/
+
 ## A Notes app with following functionalities
     - Adding/Deleting Note
     - Light/Dark Mode options
